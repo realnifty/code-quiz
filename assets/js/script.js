@@ -7,6 +7,7 @@ var currentQuestion = {};
 var answerAccept = false;
 var startingScore = 0;
 var availQuestions = [];
+var time = 60;
 
 var questionListArr = [
     {
@@ -54,6 +55,16 @@ var questionListArr = [
 const correctQuestionScore = 20;
 const questionMaxNum = 5;
 
+activeTimer.innerHTML = "00:" + time;
+
+var countDown = setInterval(() => {
+    time--;
+    activeTimer.innerHTML = "00:" + time;
+    if (time <= 0 || time < 1) {
+        clearInterval(countDown);
+    }
+},1000);
+
 function startQuiz() {
     questionNum = 0;
     score = 0;
@@ -63,6 +74,7 @@ function startQuiz() {
 
 function nextQuestion() {
     if(availQuestion.length === 0 || questionNum > questionMaxNum) {
+        localStorage.setItem("lastScore", startingScore);
         return window.location.assign("/end.html");
     }
 
@@ -93,7 +105,7 @@ activeChoice.forEach(choice => {
 
         if (tfClass === "true") {
             addScore();
-        }
+        };
 
         choiceSelect.parentElement.classList.add(tfClass);
 
@@ -101,7 +113,6 @@ activeChoice.forEach(choice => {
            choiceSelect.parentElement.classList.remove(tfClass);
            nextQuestion(); 
         }, 1000)
-
     });
 });
 
