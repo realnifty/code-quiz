@@ -89,7 +89,16 @@ activeChoice.forEach(choice => {
         answerAccept = false;
         const choiceSelect = e.target;
         const answerSelect = choiceSelect.dataset["number"];
-        nextQuestion();
+        
+        const tfClass = answerSelect == currentQuestion.correct ? "true" : "false";
+
+        choiceSelect.parentElement.classList.add(tfClass);
+
+        setTimeout(() => {
+           choiceSelect.parentElement.classList.remove(tfClass);
+           nextQuestion(); 
+        }, 1000)
+
     });
 });
 
