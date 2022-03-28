@@ -1,14 +1,14 @@
 const activeQuestion = document.querySelector("#active-question");
-const activeChoice = document.querySelectorAll("#active-choice");
+const activeChoice = Array.from(document.querySelectorAll("#active-choice"));
 const activeTimer = document.querySelector("#active-timer");
 const activeScore = document.querySelector("#active-score");
 
-const currentQuestion = {};
-const answerAccept = true;
-const startingScore = 0;
-const questionsLeft = [];
+var currentQuestion = {};
+var answerAccept = true;
+var startingScore = 0;
+var availQuestions = [];
 
-const questionListArr = [
+var questionListArr = [
     {
         question: "Inside which HTML element do we put the JavaScript?",
         choice1: "<scripting>",
@@ -54,9 +54,24 @@ const questionListArr = [
 const correctQuestionScore = 20;
 const questionMaxNum = 5;
 
-let startQuiz = function() {
-    var questionNum = 0;
-    var currentScore = 0;
-    var availQuestion = [...questionListArr];
+function startQuiz() {
+    questionNum = 0;
+    score = 0;
+    availQuestion = [...questionListArr];
+    console.log(availQuestion);
     nextQuestion();
 };
+
+function nextQuestion() {
+    questionNum++;
+    const questionI = Math.floor(Math.random() * availQuestion.length);
+    currentQuestion = availQuestion[questionI];
+    activeQuestion.innerText = currentQuestion.question;
+
+    activeChoice.forEach(activeChoice => {
+        const num = activeChoice.dataset["number"];
+        activeChoice.innerText = currentQuestion["choice" + num]
+    })
+}
+
+startQuiz();
