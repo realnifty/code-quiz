@@ -69,6 +69,39 @@ a:hover {
     text-align: center;
 }
 
+.q-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: auto;
+    margin: 10% auto;
+}
+
+.qc-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    
+}
+
+.qc-header h1 {
+    font-size: 5rem;
+    color: #fff;
+    margin: 0;
+}
+
+.qc-header h2 {
+    font-size: 3rem;
+    color: #fff;
+    text-align: center;
+}
+
+
+
 @media screen and (max-width: 980px){
     h1 {
         font-size: 7rem;
