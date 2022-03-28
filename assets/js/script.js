@@ -58,7 +58,6 @@ function startQuiz() {
     questionNum = 0;
     score = 0;
     availQuestion = [...questionListArr];
-    console.log(availQuestion);
     nextQuestion();
 };
 
@@ -92,6 +91,10 @@ activeChoice.forEach(choice => {
         
         const tfClass = answerSelect == currentQuestion.correct ? "true" : "false";
 
+        if (tfClass === "true") {
+            addScore();
+        }
+
         choiceSelect.parentElement.classList.add(tfClass);
 
         setTimeout(() => {
@@ -101,5 +104,10 @@ activeChoice.forEach(choice => {
 
     });
 });
+
+function addScore() {
+    startingScore += correctQuestionScore;
+    activeScore.innerText = startingScore    
+}
 
 startQuiz();
