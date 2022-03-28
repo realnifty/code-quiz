@@ -4,7 +4,7 @@ const activeTimer = document.querySelector("#active-timer");
 const activeScore = document.querySelector("#active-score");
 
 var currentQuestion = {};
-var answerAccept = true;
+var answerAccept = false;
 var startingScore = 0;
 var availQuestions = [];
 
@@ -63,15 +63,34 @@ function startQuiz() {
 };
 
 function nextQuestion() {
+    if(availQuestion.length === 0 || questionNum > questionMaxNum) {
+        return window.location.assign("/end.html");
+    }
+
     questionNum++;
-    const questionI = Math.floor(Math.random() * availQuestion.length);
-    currentQuestion = availQuestion[questionI];
+    const iQuestions = Math.floor(Math.random() * availQuestion.length);
+    currentQuestion = availQuestion[iQuestions];
     activeQuestion.innerText = currentQuestion.question;
 
     activeChoice.forEach(activeChoice => {
         const num = activeChoice.dataset["number"];
-        activeChoice.innerText = currentQuestion["choice" + num]
-    })
-}
+        activeChoice.innerText = currentQuestion["choice" + num];
+    });
+    availQuestion.splice(iQuestions, 1);
+
+    answerAccept = true;
+};
+
+activeChoice.forEach(choice => {
+    choice.addEventListener("click", e => {
+        if (!answerAccept)
+        return;
+
+        answerAccept = false;
+        const choiceSelect = e.target;
+        const answerSelect = choiceSelect.dataset["number"];
+        nextQuestion();
+    });
+});
 
 startQuiz();
