@@ -100,7 +100,50 @@ a:hover {
     text-align: center;
 }
 
+.question {
+    margin: 2rem auto;
+}
 
+.question h2 {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.choice-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.choice-container p {
+    font-size: 2.5rem;
+    color: #fff;
+    margin: 1rem 2rem;;
+
+}
+
+.choice-box {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    height: auto;
+    margin: 2rem auto;
+    border: 0.5rem solid rgb(119, 119, 119);
+    border-radius: 2rem;
+}
+
+.choice-box:hover {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    height: auto;
+    margin: 2rem auto;
+    border: 0.5rem solid #fff;
+    border-radius: 2rem;
+}
 
 @media screen and (max-width: 980px){
     h1 {
