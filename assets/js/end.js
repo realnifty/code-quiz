@@ -3,7 +3,7 @@ const saveScore = document.querySelector("#save-score");
 const lastScore = localStorage.getItem("lastScore");
 const finalScore = document.querySelector("#final-score");
 
-const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+const highScores = JSON.parse(localStorage.getItem("lastScore")) || [];
 
 const highscoreMaxNum = 5;
 
