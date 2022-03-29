@@ -75,7 +75,7 @@ function startQuiz() {
 function nextQuestion() {
     if(availQuestion.length === 0 || questionNum > questionMaxNum) {
         localStorage.setItem("lastScore", startingScore);
-        return window.location.assign("/end.html");
+        return window.location.assign("end.html");
     }
 
     questionNum++;
