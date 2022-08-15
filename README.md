@@ -1,20 +1,10 @@
-# 04 Web APIs: Code Quiz
+# Code Quiz
 
-The goal of this challenge was to create a timed quiz on javascript fundamentals. The criteria that has to be met are as follows: 
+![License: MIT License](https://img.shields.io/badge/license-MIT-orange)
+  
+## Description
 
-GIVEN I am taking a code quiz
-WHEN I click the Start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and score
-
-## Screenshots
+A webpage presenting a timed quiz on JavaScript fundamentals. Highscores are saved to local storage and can be viewed on the homepage leaderboard.
 
 ![Demonstration of the Coding Quiz Challenge.](./assets/images/homepage.png)
 
@@ -24,5 +14,44 @@ THEN I can save my initials and score
 
 ![Demonstration of the Coding Quiz Challenge.](./assets/images/highscore.png)
 
-## Here is a link to the deployed application: [GitHub Pages](https://realnifty.github.io/04-javascript-quiz/)
+[Deployment](https://realnifty.github.io/code-quiz/)
+
+## Table of Contents
+
+- [Technologies](#technologies)
+- [Installation](#installation)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+
+## Technologies
+
+This app was built with:
+- HTML
+- CSS
+- JavaScript
+
+## Installation
+
+No installation required! Simply navigate to the deployment via link provided above. To run locally, clone the repository to your local machine and open with your preferred browser.
+
+## License
+    
+Licensed under the [MIT License](https://spdx.org/licenses/MIT.html)
+
+## Contributing
+
+No contributions will be accepted at this time.
+
+## Tests
+
+No testing is planned for this project at this time.
+
+## Questions
+
+Have questions? Reach me at the following sources!
+
+* GitHub: [realnifty](https://github.com/realnifty)
+* E-mail: rogelioalbertopedraza@gmail.com or lovecore@pm.me
 
